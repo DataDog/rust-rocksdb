@@ -179,6 +179,7 @@ fn build_rocksdb() {
 
     if cfg!(feature = "jemalloc") {
         config.define("WITH_JEMALLOC", "ON");
+        println!("cargo:rustc-link-lib=static=jemalloc");
     }
 
     if target.contains("msvc") {

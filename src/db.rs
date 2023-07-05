@@ -127,7 +127,7 @@ pub trait DBInner {
 ///
 /// [`OptimisticTransactionDB`]: crate::OptimisticTransactionDB
 pub struct DBCommon<T: ThreadMode, D: DBInner> {
-    pub(crate) inner: D,
+    pub inner: D,
     cfs: T, // Column families are held differently depending on thread mode
     path: PathBuf,
     _outlive: Vec<OptionsMustOutliveDB>,

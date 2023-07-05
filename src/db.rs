@@ -122,7 +122,7 @@ impl ThreadMode for MultiThreaded {
 ///
 /// See crate level documentation for a simple usage example.
 pub struct DBWithThreadMode<T: ThreadMode> {
-    pub(crate) inner: *mut ffi::rocksdb_t,
+    pub inner: *mut ffi::rocksdb_t,
     cfs: T, // Column families are held differently depending on thread mode
     path: PathBuf,
     _outlive: Vec<OptionsMustOutliveDB>,

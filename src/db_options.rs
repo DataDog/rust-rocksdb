@@ -270,7 +270,7 @@ impl BlockBasedOptionsMustOutliveDB {
 /// }
 /// ```
 pub struct Options {
-    pub(crate) inner: *mut ffi::rocksdb_options_t,
+    pub inner: *mut ffi::rocksdb_options_t,
     pub(crate) outlive: OptionsMustOutliveDB,
 }
 
